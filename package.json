@@ -1,0 +1,37 @@
+{
+  "name": "git-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Valeriy Sidorenko",
+  "license": "MIT",
+  "scripts": {
+    "lint:css": "stylelint **/*.css",
+    "format:css": "stylelint **/*.css --fix"
+  },
+  "devDependencies": {
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "stylelint": "^11.0.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-prettier": "^1.1.1"
+  },
+  "lint-staged": {
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.html": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
