@@ -35,10 +35,6 @@
     "*.css": [
       "stylelint --fix",
       "git add"
-    ],
-    "*.{html,md}": [
-      "prettier --write",
-      "git add"
     ]
   },
   "husky": {

@@ -1,0 +1,53 @@
+
+.Typo {
+  font-weight: normal;
+  font-family: 'YS Text', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.Typo_weight_bold {
+  font-weight: bold;
+}
+
+.Typo-Caps {
+  text-transform: uppercase;
+}
+
+.Typo_size_l {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.Typo_size_m {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.Typo_size_s {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.Typo_size_xs {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@media screen and (min-width: 414px) {
+  .Typo-H1 {
+    font-size: 24px;
+  }
+
+  .Typo_size_l {
+    font-size: 24px;
+  }
+}
+
+.Typo-Code {
+  font-size: 12px;
+  font-family: 'RT Mono', monospace;
+  line-height: 20px;
+}

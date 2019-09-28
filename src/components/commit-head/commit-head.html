@@ -1,0 +1,18 @@
+<div class="CommitHead">
+  <div class="CommitHead-Element CommitHead-Element_float_right">
+    <include
+      src="src/components/commit-selector/commit-selector.html"
+    ></include>
+  </div>
+  <a href="#" class="Link CommitHead-Back Typo Typo_size_s">
+    <span class="Icon Icon_img_back"></span>Back
+  </a>
+  <h1 class="CommitHead-Title Typo Typo_size_l">
+    {{ title }}
+  </h1>
+  <div class="CommitHead-CommitData">
+    <include src="src/components/commit-hash/commit-hash.html"></include>
+    by
+    <include src="src/components/committer/committer.html"></include>, 4 s ago
+  </div>
+</div>

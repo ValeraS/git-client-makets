@@ -1,0 +1,13 @@
+.Tabs-Tab {
+  display: inline-block;
+  height: 28px;
+  margin-right: 32px;
+}
+
+.Tabs-Tab_active_true {
+  border-bottom: 3px solid #ff4f49;
+}
+
+.Tabs-Link {
+  color: #999999;
+}

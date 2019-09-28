@@ -1,0 +1,15 @@
+.CommitSelector {
+  padding: 7px 12px 6px 12px;
+
+  font-size: 13px;
+  line-height: 15px;
+
+  background-color: #e6e6e6;
+
+  border: none;
+  border-radius: 4px;
+}
+
+.CommitSelector-Icon {
+  margin-right: 6px;
+}

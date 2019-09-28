@@ -1,0 +1,9 @@
+.Container {
+  padding: 0 var(--space-m);
+}
+
+@media screen and (min-width: 414px) {
+  .Container {
+    padding: 0 var(--space-xxl);
+  }
+}

@@ -1,0 +1,31 @@
+.Icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+  vertical-align: middle;
+}
+
+.Icon_img_diff {
+  background: url('/assets/history-diff.svg') no-repeat;
+}
+
+.Icon_img_download {
+  background: url('/assets/download.svg') no-repeat;
+}
+
+.Icon_img_back {
+  background: url('/assets/arrow-left.svg') no-repeat;
+}
+
+.Icon_img_menu {
+  background: url('/assets/menu.svg') no-repeat;
+}
+
+.Icon_img_open {
+  background: url('/assets/clone.svg') no-repeat;
+}
+
+.Icon_img_file {
+  background: url('/assets/diff-icon.svg') no-repeat;
+}

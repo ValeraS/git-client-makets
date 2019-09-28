@@ -1,0 +1,9 @@
+.CommitSection-Diff {
+  margin: 0 calc(-1 * var(--space-m));
+}
+
+@media screen and (min-width: 414px) {
+  .CommitSection-Diff {
+    margin: 0;
+  }
+}

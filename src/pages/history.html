@@ -1,0 +1,23 @@
+<scope with="history">
+  <extends src="src/index.html">
+    <block name="content">
+      <div class="Container">
+        <div class="Section Section_indent-b_s Divider">
+          <include src="src/components/path/path.html"></include>
+        </div>
+        <div class="Section Section_indent-b_s">
+          <include src="src/components/file-header/file-header.html"></include>
+        </div>
+        <div class="Section Section_indent-b_s">
+          <include src="src/components/last-commit/last-commit.html"></include>
+        </div>
+        <div class="Section Section_indent-b_m Divider">
+          <scope with="fileTabs">
+            <include src="src/components/tabs/tabs.html"></include>
+          </scope>
+        </div>
+        <include src="src/components/history/history.html"></include>
+      </div>
+    </block>
+  </extends>
+</scope>

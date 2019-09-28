@@ -1,0 +1,57 @@
+.RepositorySelector {
+  display: inline-block;
+  margin-right: 20px;
+
+  padding: 20px 0 15px 0;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  border-bottom: 3px solid #ff4f49;
+}
+
+.RepositorySelector-Button {
+  white-space: nowrap;
+
+  list-style: none;
+  cursor: pointer;
+}
+
+.RepositorySelector-Button::-webkit-details-marker {
+  display: none;
+}
+
+.RepositorySelector-Arrow {
+  position: absolute;
+
+  width: 12px;
+  height: 18px;
+  margin-right: 2px;
+
+  margin-left: 6px;
+}
+
+.RepositorySelector-Options {
+  position: absolute;
+  z-index: 99;
+
+  margin: 0;
+  margin-top: 18px;
+  padding: 6px 81px 16px 22px;
+
+  background-color: var(--background);
+  box-shadow: 0px 4px 16px rgba(53, 73, 93, 0.2);
+}
+
+.RepositorySelector-Option {
+  padding: 8px 0;
+
+  white-space: nowrap;
+
+  list-style: none;
+}
+
+.RepositorySelector-Value {
+  color: var(--text-color);
+  text-decoration: none;
+}

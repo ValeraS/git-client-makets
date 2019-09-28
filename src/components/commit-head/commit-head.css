@@ -1,0 +1,26 @@
+.CommitHead {
+  margin-top: 10px;
+}
+
+.CommitHead-Element_float_right {
+  float: right;
+}
+
+.CommitHead-Title {
+  margin: 12px 0 8px 0;
+}
+
+.CommitHead-Back {
+  color: var(--text-color-secondary);
+  line-height: 28px;
+}
+
+@media screen and (min-width: 414px) {
+  .CommitHead-Back {
+    display: none;
+  }
+
+  .CommitHead-Title {
+    margin: 16px 0 5px 0;
+  }
+}

@@ -1,0 +1,18 @@
+.BranchSelector-Button {
+  padding: 0;
+
+  color: #7F8285;
+
+  background: none;
+  border: none;
+}
+
+.BranchSelector-Button::after {
+  display: inline-block;
+  width: 10px;
+  height:10px;
+
+  background: url('/assets/arrow-bottom.svg') no-repeat;
+
+  content: "";
+}

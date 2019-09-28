@@ -1,0 +1,48 @@
+<table class="Table Typo Typo_size_s">
+  <thead class="Divider">
+    <tr class="Table-Head">
+      <td class="Table-Col">
+        Name
+      </td>
+      <td class="Table-Col">
+        Last commit
+      </td>
+      <td class="Table-Col">
+        Commit message
+      </td>
+      <td class="Table-Col">
+        Committer
+      </td>
+      <td class="Table-LastCol">
+        Updated
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <each loop="file in files">
+      <tr class="Table-Line Divider">
+        <scope with="file">
+          <td class="Table-Col">
+            <span class="FileTypeIcon FileTypeIcon_type_{{ type }}">
+              {{ name }}
+            </span>
+          </td>
+          <td class="Table-Col">
+            <include
+              src="src/components/commit-hash/commit-hash.html"
+            ></include>
+          </td>
+          <td class="Table-Col">
+            {{ message }}
+          </td>
+          <td class="Table-Col">
+            <include src="src/components/committer/committer.html"></include>
+          </td>
+          <td class="Table-LastCol">
+            {{ time }}
+          </td>
+        </scope>
+      </tr>
+    </each>
+  </tbody>
+</table>

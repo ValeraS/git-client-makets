@@ -1,0 +1,30 @@
+<table class="Table Typo Typo_size_s">
+  <thead class="Divider">
+    <tr class="Table-Head">
+      <td class="Table-Col">
+        Name
+      </td>
+      <td class="Table-LastCol">
+        Commit hash
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <each loop="branch in branches">
+      <tr class="Table-Line Divider">
+        <scope with="branch">
+          <td class="Table-Col">
+            <span class="FileTypeIcon FileTypeIcon_type_branch">
+              {{ name }}
+            </span>
+          </td>
+          <td class="Table-LastCol">
+            <include
+              src="src/components/commit-hash/commit-hash.html"
+            ></include>
+          </td>
+        </scope>
+      </tr>
+    </each>
+  </tbody>
+</table>

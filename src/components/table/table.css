@@ -1,0 +1,29 @@
+.Table {
+  border-collapse: collapse;
+}
+
+.Table-Head {
+  height: 28px;
+
+  color: var(--text-color-secondary);
+
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.Table-Line {
+  height: 48px;
+}
+
+.Table-Col {
+  padding: 0 8px;
+}
+
+.Table-LastCol {
+  width: 1%;
+  padding-right: 8px;
+  padding-left: 8px;
+
+  white-space: nowrap;
+  text-align: right;
+}

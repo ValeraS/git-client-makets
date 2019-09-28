@@ -1,0 +1,18 @@
+<scope with="commit">
+  <extends src="src/index.html">
+    <block name="content">
+      <main class="CommitSection Container">
+        <div class="Section Section_indent-b_m">
+          <include src="src/components/commit-head/commit-head.html"></include>
+        </div>
+        <div class="CommitSection-Diff Section Section_indent-b_s">
+          <each loop="fileDiff in diff">
+            <scope with="fileDiff">
+              <include src="src/components/file-diff/file-diff.html"></include>
+            </scope>
+          </each>
+        </div>
+      </main>
+    </block>
+  </extends>
+</scope>

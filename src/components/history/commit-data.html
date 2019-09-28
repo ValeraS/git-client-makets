@@ -1,0 +1,10 @@
+<div class="CommitData">
+  <h3 class="CommitData-Line Typo Typo_size_s Typo_weight_bold">{{ title }}</h3>
+  <p class="CommitData-Line Typo Typo_size_xs">{{ message }}</p>
+  <div class="CommitData-Line Typo Typo_size_xs">
+    <include src="src/components/commit-hash/commit-hash.html"></include>
+    by
+    <include src="src/components/committer/committer.html"></include>
+    {{ time }}
+  </div>
+</div>

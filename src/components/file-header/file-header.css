@@ -1,0 +1,8 @@
+.FileHeader {
+  display: flex;
+}
+
+.FileHeader-Filename {
+  margin: 0;
+  margin-right: var(--space-xxs);
+}

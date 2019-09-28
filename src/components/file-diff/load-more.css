@@ -1,0 +1,28 @@
+.LoadMore-Button {
+  background: none;
+  border: none;
+}
+
+.LoadMore-Button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.LoadMore-Button:disabled {
+  color: #b8bec3;
+}
+
+.LoadMore-Icon::before {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+
+  content: '';
+}
+
+.LoadMore-Icon_img_above::before {
+  background: url('/assets/arrow-top-solid.svg') center no-repeat;
+}
+
+.LoadMore-Icon_img_below::before {
+  background: url('/assets/arrow-bottom-solid.svg') center no-repeat;
+}

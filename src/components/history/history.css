@@ -1,0 +1,61 @@
+.HistoryDay-Title {
+  margin: 8px 0 16px;
+
+  color: var(--text-color-secondary);
+}
+
+.HistoryDay-Content {
+  padding: 0;
+}
+
+.HistoryDay-Commit {
+  position: relative;
+}
+
+.HistoryDay-Commit:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.HistoryDay-Commit::before {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  margin-right: 12px;
+
+  background: url('../assets/history-commit.svg') no-repeat;
+
+  content: "";
+}
+
+.HistoryDay-Commit:not(:last-child)::after {
+  position: absolute;
+  top: 42px;
+  left: 20px;
+
+  width: 2px;
+  height: calc(100% - 28px);
+
+  background-color: #B8BEC3;
+  border-radius: 10px;
+
+  content: "";
+}
+
+.CommitLine {
+  display: flex;
+}
+
+.CommitLine-CommitData {
+  flex: 1 1 75%;
+}
+
+.CommitLine-CommitHash {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .CommitLine-CommitHash {
+    display: inline;
+    flex: 0 1 25%;
+  }
+}

@@ -1,0 +1,39 @@
+
+.Line {
+  position: relative;
+}
+
+.Line_type_expand {
+  background-color: #f1f8ff;
+}
+
+.Line_type_add {
+  background-color: #e6ffed;
+}
+
+.Line_type_remove {
+  background-color: #ffeef0;
+}
+
+.Line-Changes {
+  color: #b8bec3;
+  line-height: 26px;
+}
+
+.Line-Num {
+  width: 1%;
+  min-width: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  color: #b8bec3;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.Line-Code {
+  padding-right: 10px;
+  padding-left: 10px;
+
+  white-space: nowrap;
+}

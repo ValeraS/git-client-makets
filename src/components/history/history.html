@@ -1,0 +1,30 @@
+<div class="History">
+  <each loop="historyDay in history">
+    <div class="HistoryDay">
+      <h2 class="HistoryDay-Title Typo Typo_size_m">{{ historyDay.title }}</h2>
+      <ul class="HistoryDay-Content">
+        <each loop="commit in historyDay.commits">
+          <li class="HistoryDay-Commit CommitLine">
+            <div class="CommitLine-CommitData">
+              <scope with="commit">
+                <include
+                  src="src/components/history/commit-data.html"
+                ></include>
+              </scope>
+            </div>
+            <div class="CommitLine-CommitHash Typo Typo_size_s">
+              <scope with="commit">
+                <include
+                  src="src/components/commit-hash/commit-hash.html"
+                ></include>
+              </scope>
+            </div>
+            <div class="CommitLine-Diff">
+              <a class="Icon Icon_img_diff" href="#"></a>
+            </div>
+          </li>
+        </each>
+      </ul>
+    </div>
+  </each>
+</div>

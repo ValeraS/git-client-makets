@@ -1,0 +1,14 @@
+<div class="Tabs Typo Typo_size_m">
+  <each loop="tab in tabs">
+    <if condition="tab === activeTab">
+      <div class="Tabs-Tab Typo-Caps Tabs-Tab_active_true Typo_weight_bold">
+        {{ tab }}
+      </div>
+    </if>
+    <else>
+      <div class="Tabs-Tab Typo-Caps Typo_weight_bold">
+        <a href="#" class="Tabs-Link Link">{{ tab }}</a>
+      </div>
+    </else>
+  </each>
+</div>

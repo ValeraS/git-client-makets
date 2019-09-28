@@ -1,0 +1,22 @@
+.FileTypeIcon::before {
+  display: inline-block;
+
+  width: 12px;
+  height: 10px;
+  margin-right: 8px;
+
+  content: "";
+}
+
+.FileTypeIcon_type_dir::before {
+  background: url('/assets/folder.svg') center no-repeat;
+}
+
+.FileTypeIcon_type_file::before {
+  background: url('/assets/file.svg') center no-repeat;
+}
+.FileTypeIcon_type_branch::before {
+  height: 12px;
+
+  background: url('/assets/branch.svg') center no-repeat;
+}

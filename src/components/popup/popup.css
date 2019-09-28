@@ -1,0 +1,7 @@
+.Popup {
+  position: absolute;
+}
+
+.Popup_hidden_true {
+  display: none;
+}
