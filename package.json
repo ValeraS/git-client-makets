@@ -5,12 +5,24 @@
   "author": "Valeriy Sidorenko",
   "license": "MIT",
   "scripts": {
-    "lint:css": "stylelint **/*.css",
-    "format:css": "stylelint **/*.css --fix"
+    "start": "gulp watch",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "format:css": "stylelint \"src/**/*.css\" --fix"
   },
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-sourcemaps": "^2.6.5",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
+    "live-server": "^1.2.1",
+    "posthtml": "^0.11.6",
+    "posthtml-expressions": "^1.1.1",
+    "posthtml-extend": "^0.3.0",
+    "posthtml-include": "^1.2.0",
     "prettier": "^1.18.2",
     "stylelint": "^11.0.0",
     "stylelint-config-prettier": "^5.2.0",
@@ -24,7 +36,7 @@
       "stylelint --fix",
       "git add"
     ],
-    "*.html": [
+    "*.{html,md}": [
       "prettier --write",
       "git add"
     ]
