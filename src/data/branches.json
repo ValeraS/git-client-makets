@@ -1,0 +1,31 @@
+{
+  "path": [],
+  "filename": "arcadia",
+  "committer": "robot-srch-releaser",
+  "fileTabs": {
+    "tabs": ["Files", "Branches"],
+    "activeTab": "Branches"
+  },
+  "branches": [
+    {
+      "name": "trunk",
+      "hash": "9748ds893432438dsd823329d923482d"
+    },
+    {
+      "name": "users/a-aidyn00/my-feature-2",
+      "hash": "9748ds893432438dsd823329d923482d"
+    },
+    {
+      "name": "users/a-aidyn00/my-feature-3",
+      "hash": "9748ds893432438dsd823329d923482d"
+    },
+    {
+      "name": "users/a-aidyn00/my-feature-4",
+      "hash": "9748ds893432438dsd823329d923482d"
+    },
+    {
+      "name": "users/a-aidyn00/my-feature-5",
+      "hash": "9748ds893432438dsd823329d923482d"
+    }
+  ]
+}

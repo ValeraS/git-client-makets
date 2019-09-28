@@ -1,0 +1,11 @@
+{
+  "title": "DEVTOOLS-4599: Add option to add extra whitespace between projects",
+  "hash": "s324e8",
+  "committer": "robot-srch-releaser",
+  "diff": [
+    {
+      "filename": "/trunk/arcadia/devtools/intellij/src/main/java/ru/yandex/devtools/intellij/arc/client/ArcCli.java",
+      "content": []
+    }
+  ]
+}

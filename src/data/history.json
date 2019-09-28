@@ -1,0 +1,63 @@
+{
+  "path": ["foo", "bar"],
+  "filename": "ya.make",
+  "committer": "robot-srch-releaser",
+  "fileTabs": {
+    "tabs": ["Details", "History"],
+    "activeTab": "History"
+  },
+  "history": [
+    {
+      "title": "Today",
+      "commits": [
+        {
+          "hash": "s324e8",
+          "title": "Force executing on MULTISLOT hosts by declaring Caches",
+          "message": "Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.",
+          "committer": "rudskoy",
+          "time": "4 s ago"
+        },
+        {
+          "hash": "s324e8",
+          "title": "Force executing on MULTISLOT hosts by declaring Caches",
+          "message": "Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.",
+          "committer": "rudskoy",
+          "time": "4 s ago"
+        },
+        {
+          "hash": "s324e8",
+          "title": "Force executing on MULTISLOT hosts by declaring Caches",
+          "message": "Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.",
+          "committer": "rudskoy",
+          "time": "4 s ago"
+        }
+      ]
+    },
+    {
+      "title": "Yesterday",
+      "commits": [
+        {
+          "hash": "s324e8",
+          "title": "Force executing on MULTISLOT hosts by declaring Caches",
+          "message": "Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.",
+          "committer": "rudskoy",
+          "time": "4 s ago"
+        },
+        {
+          "hash": "s324e8",
+          "title": "Force executing on MULTISLOT hosts by declaring Caches",
+          "message": "Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.",
+          "committer": "rudskoy",
+          "time": "4 s ago"
+        },
+        {
+          "hash": "s324e8",
+          "title": "Force executing on MULTISLOT hosts by declaring Caches",
+          "message": "Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.",
+          "committer": "rudskoy",
+          "time": "4 s ago"
+        }
+      ]
+    }
+  ]
+}

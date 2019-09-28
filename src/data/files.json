@@ -1,0 +1,43 @@
+{
+  "path": [],
+  "filename": "arcadia",
+  "committer": "robot-srch-releaser",
+  "fileTabs": {
+    "tabs": ["Files", "Branches"],
+    "activeTab": "Files"
+  },
+  "files": [
+    {
+      "type": "dir",
+      "name": "api",
+      "hash": "d53dsv",
+      "message": "[vcs] move http to arc",
+      "committer": "noxoomo",
+      "time": "4 s ago"
+    },
+    {
+      "type": "dir",
+      "name": "ci",
+      "hash": "d53dsv",
+      "message": "ARCADIA-771: append /trunk/arcadia/",
+      "committer": "annaveronika",
+      "time": "Yesterday, 14:50"
+    },
+    {
+      "type": "dir",
+      "name": "contrib",
+      "hash": "d53dsv",
+      "message": "[vcs] move http to arc",
+      "committer": "noxoomo",
+      "time": "4 s ago"
+    },
+    {
+      "type": "file",
+      "name": "ya.make",
+      "hash": "d53dsv",
+      "message": "[vcs] move http to arc",
+      "committer": "noxoomo",
+      "time": "4 s ago"
+    }
+  ]
+}

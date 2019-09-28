@@ -1,0 +1,14 @@
+{
+  "path": ["foo", "bar"],
+  "filename": "ya.make",
+  "committer": "robot-srch-releaser",
+  "fileTabs": {
+    "tabs": ["Details", "History"],
+    "activeTab": "Details"
+  },
+  "fileSize": "(4 347 bytes)",
+  "fileContent": [
+    "",
+    ""
+  ]
+}
