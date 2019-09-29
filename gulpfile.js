@@ -6,8 +6,34 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const fs = require('fs');
 const liveServer = require('live-server');
+const Bundler = require('parcel-bundler');
+const Stream = require('stream');
 
 const expressions = require('posthtml-expressions');
+
+function buildBundle(bundleName) {
+  const stream = new Stream.Writable({ objectMode: true });
+  stream._write = function(file, _, cb) {
+    const options = {
+      outDir: './build',
+      outFile: `${bundleName}.js`,
+      global: bundleName,
+      watch: false,
+      // minify: true
+    };
+    const entryPoint = file.path;
+    const bundler = new Bundler(entryPoint, options);
+    bundler
+      .bundle()
+      .then(() => cb())
+      .catch(err => cb(err));
+  };
+  return stream;
+}
+
+function appBundle() {
+  return gulp.src('src/index.js', { read: false }).pipe(buildBundle('index'));
+}
 
 function html() {
   let path;
@@ -46,6 +72,7 @@ function css() {
 function watch() {
   gulp.watch('src/**/*.css', css);
   gulp.watch('src/**/*.html', html);
+  gulp.watch('src/**/*.js', appBundle);
 }
 
 function serve() {
@@ -53,10 +80,10 @@ function serve() {
     root: 'build',
     mount: [['/assets', 'assets']],
     port: 8888,
-    wait: 1000
+    wait: 1000,
   };
   liveServer.start(params);
 }
 
-exports.default = gulp.series(html, css);
+exports.default = gulp.series(html, css, appBundle);
 exports.watch = gulp.parallel(watch, serve);

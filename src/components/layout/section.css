@@ -5,3 +5,7 @@
 .Section_indent-b_m {
   margin-bottom: var(--space-m);
 }
+
+.Section_overflow-x_auto {
+  overflow-x: auto;
+}

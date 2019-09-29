@@ -47,6 +47,16 @@
   }
 }
 
+.CommitSection-Diff {
+  margin: 0 calc(-1 * var(--space-m));
+}
+
+@media screen and (min-width: 414px) {
+  .CommitSection-Diff {
+    margin: 0;
+  }
+}
+
 .CommitSelector {
   padding: 7px 12px 6px 12px;
 
@@ -167,14 +177,102 @@
   white-space: nowrap;
 }
 
-.CommitSection-Diff {
-  margin: 0 calc(-1 * var(--space-m));
+.FileDiff {
+  border: 1px solid #f0f2f3;
+  border-radius: 4px;
 }
 
-@media screen and (min-width: 414px) {
-  .CommitSection-Diff {
-    margin: 0;
+.FileDiff-Header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 0 16px;
+
+  background-color: #fafbfc;
+  border-bottom: 1px solid #f0f2f3;
+}
+
+.FileDiff-FileName {
+  flex-grow: 100;
+  margin-bottom: 8px;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.FileDiff-Actions {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.FileDiff-Content {
+  overflow-x: auto;
+}
+
+/* LoadMore */
+
+.FileDiff-LoadMore {
+  position: absolute;
+  left: 50%;
+
+  display: none;
+
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 750px) {
+  .FileDiff-LoadMore {
+    display: inline-block;
   }
+}
+
+.FileDiffStat-Element {
+  margin-right: 16px;
+}
+
+.FileDiff-Marker {
+  color: #6b69c7;
+}
+
+.Text_color_green {
+  color: #19bc4d;
+}
+
+.Text_color_red {
+  color: #ff3029;
+}
+
+.LoadMore-Button {
+  background: none;
+  border: none;
+}
+
+.LoadMore-Button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.LoadMore-Button:disabled {
+  color: #b8bec3;
+}
+
+.LoadMore-Icon::before {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+
+  content: '';
+}
+
+.LoadMore-Icon_img_above::before {
+  background: url('/assets/arrow-top-solid.svg') center no-repeat;
+}
+
+.LoadMore-Icon_img_below::before {
+  background: url('/assets/arrow-bottom-solid.svg') center no-repeat;
 }
 
 .FileHeader {
@@ -207,6 +305,7 @@
 
   background: url('/assets/branch.svg') center no-repeat;
 }
+
 .Footer {
   display: flex;
   flex-direction: column;
@@ -380,6 +479,10 @@
 .Section_indent-b_m {
   margin-bottom: var(--space-m);
 }
+
+.Section_overflow-x_auto {
+  overflow-x: auto;
+}
 .Link {
   text-decoration: none;
 }
@@ -422,36 +525,6 @@
 
 .Popup_hidden_true {
   display: none;
-}
-
-.Table {
-  border-collapse: collapse;
-}
-
-.Table-Head {
-  height: 28px;
-
-  color: var(--text-color-secondary);
-
-  white-space: nowrap;
-  vertical-align: top;
-}
-
-.Table-Line {
-  height: 48px;
-}
-
-.Table-Col {
-  padding: 0 8px;
-}
-
-.Table-LastCol {
-  width: 1%;
-  padding-right: 8px;
-  padding-left: 8px;
-
-  white-space: nowrap;
-  text-align: right;
 }
 
 .RepositorySelector {
@@ -512,102 +585,34 @@
   text-decoration: none;
 }
 
-.FileDiff {
-  border: 1px solid #f0f2f3;
-  border-radius: 4px;
+.Table {
+  border-collapse: collapse;
 }
 
-.FileDiff-Header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px 0 16px;
+.Table-Head {
+  height: 28px;
 
-  background-color: #fafbfc;
-  border-bottom: 1px solid #f0f2f3;
-}
-
-.FileDiff-FileName {
-  flex-grow: 100;
-  margin-bottom: 8px;
-  overflow: hidden;
+  color: var(--text-color-secondary);
 
   white-space: nowrap;
-  text-overflow: ellipsis;
+  vertical-align: top;
 }
 
-.FileDiff-Actions {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  margin-bottom: 7px;
+.Table-Line {
+  height: 48px;
 }
 
-.FileDiff-Content {
-  overflow-x: auto;
+.Table-Col {
+  padding: 0 8px;
 }
 
-/* LoadMore */
+.Table-LastCol {
+  width: 1%;
+  padding-right: 8px;
+  padding-left: 8px;
 
-.FileDiff-LoadMore {
-  position: absolute;
-  left: 50%;
-
-  display: none;
-
-  transform: translateX(-50%);
-}
-
-@media screen and (min-width: 750px) {
-  .FileDiff-LoadMore {
-    display: inline-block;
-  }
-}
-
-.FileDiffStat-Element {
-  margin-right: 16px;
-}
-
-.FileDiff-Marker {
-  color: #6b69c7;
-}
-
-.Text_color_green {
-  color: #19bc4d;
-}
-
-.Text_color_red {
-  color: #ff3029;
-}
-
-.LoadMore-Button {
-  background: none;
-  border: none;
-}
-
-.LoadMore-Button:not(:last-child) {
-  margin-right: 20px;
-}
-
-.LoadMore-Button:disabled {
-  color: #b8bec3;
-}
-
-.LoadMore-Icon::before {
-  display: inline-block;
-  width: 8px;
-  height: 10px;
-
-  content: '';
-}
-
-.LoadMore-Icon_img_above::before {
-  background: url('/assets/arrow-top-solid.svg') center no-repeat;
-}
-
-.LoadMore-Icon_img_below::before {
-  background: url('/assets/arrow-bottom-solid.svg') center no-repeat;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .Tabs-Tab {

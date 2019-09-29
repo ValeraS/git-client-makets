@@ -1,4 +1,4 @@
-<table class="Table Typo Typo_size_s">
+<table class="FileList Table Typo Typo_size_s">
   <thead class="Divider">
     <tr class="Table-Head">
       <td class="Table-Col">
@@ -20,8 +20,8 @@
   </thead>
   <tbody>
     <each loop="file in files">
-      <tr class="Table-Line Divider">
-        <scope with="file">
+      <scope with="file">
+        <tr class="Table-Line Divider">
           <td class="Table-Col">
             <span class="FileTypeIcon FileTypeIcon_type_{{ type }}">
               {{ name }}
@@ -41,8 +41,8 @@
           <td class="Table-LastCol">
             {{ time }}
           </td>
-        </scope>
-      </tr>
+        </tr>
+      </scope>
     </each>
   </tbody>
 </table>
