@@ -6,11 +6,16 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp watch",
+    "lint:code": "eslint .",
     "lint:css": "stylelint \"src/**/*.css\"",
+    "format:code": "eslint . --fix",
     "format:css": "stylelint \"src/**/*.css\" --fix"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
+    "eslint": "^6.5.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
@@ -35,6 +40,10 @@
   "lint-staged": {
     "*.css": [
       "stylelint --fix",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
       "git add"
     ]
   },
