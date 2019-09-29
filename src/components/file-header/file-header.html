@@ -1,7 +1,9 @@
 <div class="FileHeader">
   <h1 class="FileHeader-Filename Typo Typo_size_l">{{ filename }}</h1>
   <include src="src/components/branch-selector/branch-selector.html"></include>
-  <div class="FileHeader-Search">
-    <include src="src/components/filter-table/filter-table.html"></include>
-  </div>
+  <if condition="useFilter === true">
+    <div class="FileHeader-Search">
+      <include src="src/components/filter/filter.html"></include>
+    </div>
+  </if>
 </div>

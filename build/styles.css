@@ -20,6 +20,16 @@
   color: var(--text-color-link);
 }
 
+.CommitSection-Diff {
+  margin: 0 calc(-1 * var(--space-m));
+}
+
+@media screen and (min-width: 414px) {
+  .CommitSection-Diff {
+    margin: 0;
+  }
+}
+
 .CommitHead {
   margin-top: 10px;
 }
@@ -44,16 +54,6 @@
 
   .CommitHead-Title {
     margin: 16px 0 5px 0;
-  }
-}
-
-.CommitSection-Diff {
-  margin: 0 calc(-1 * var(--space-m));
-}
-
-@media screen and (min-width: 414px) {
-  .CommitSection-Diff {
-    margin: 0;
   }
 }
 
@@ -277,11 +277,16 @@
 
 .FileHeader {
   display: flex;
+  align-items: center;
 }
 
 .FileHeader-Filename {
   margin: 0;
   margin-right: var(--space-xxs);
+}
+
+.FileHeader-Search {
+  margin-left: 16px; 
 }
 .FileTypeIcon::before {
   display: inline-block;
@@ -304,6 +309,28 @@
   height: 12px;
 
   background: url('/assets/branch.svg') center no-repeat;
+}
+.Header {
+  display: flex;
+  align-items: center;
+  height: 55px;
+
+  border-bottom: 1px solid #f0f2f3;
+}
+
+.Header-Logo {
+  flex-grow: 0;
+  padding: 16px;
+}
+
+.Header-Content {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 414px) {
+  .Header-Logo {
+    padding: 16px 32px;
+  }
 }
 
 .Footer {
@@ -343,29 +370,6 @@
     padding: 16px 32px;
   }
 }
-.Header {
-  display: flex;
-  align-items: center;
-  height: 55px;
-
-  border-bottom: 1px solid #f0f2f3;
-}
-
-.Header-Logo {
-  flex-grow: 0;
-  padding: 16px;
-}
-
-.Header-Content {
-  flex-grow: 1;
-}
-
-@media screen and (min-width: 414px) {
-  .Header-Logo {
-    padding: 16px 32px;
-  }
-}
-
 .CommitData-Line {
   margin: 0;
 }
@@ -585,6 +589,20 @@
   text-decoration: none;
 }
 
+.Tabs-Tab {
+  display: inline-block;
+  height: 28px;
+  margin-right: 32px;
+}
+
+.Tabs-Tab_active_true {
+  border-bottom: 3px solid #ff4f49;
+}
+
+.Tabs-Link {
+  color: #999999;
+}
+
 .Table {
   border-collapse: collapse;
 }
@@ -613,20 +631,6 @@
 
   white-space: nowrap;
   text-align: right;
-}
-
-.Tabs-Tab {
-  display: inline-block;
-  height: 28px;
-  margin-right: 32px;
-}
-
-.Tabs-Tab_active_true {
-  border-bottom: 3px solid #ff4f49;
-}
-
-.Tabs-Link {
-  color: #999999;
 }
 
 :root {

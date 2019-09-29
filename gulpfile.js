@@ -36,8 +36,6 @@ function appBundle() {
 }
 
 function html() {
-  let path;
-
   const data = {
     history: JSON.parse(fs.readFileSync('./src/data/history.json')),
     file: JSON.parse(fs.readFileSync('./src/data/file.json')),

@@ -1,23 +1,40 @@
-function View(el, store) {
-  this._el = el;
-  this._store = store;
-  this._unsubscribe = store.subscribe(
-    this._prepareRender.bind(this)
-  );
-  this._prepareRender();
-}
+export default class View {
+  constructor(el, store) {
+    this._el = el;
+    this._store = store;
+    this._isDestroyed = false;
+    this._unsubscribe = store.subscribe(this._prepareRender.bind(this));
+    this._prepareRender();
 
-View.prototype._prepareRender = function() {
-  this._el.innerHTML = this.render(this._store.getState());
-}
+    if (typeof this.componentDidMount === 'function') {
+      Promise.resolve().then(() => this.componentDidMount());
+    }
+  }
 
-View.prototype.render = function() {
-  throw new Error('Render should be overridden');
-}
+  _prepareRender() {
+    if (this._isDestroyed) {
+      return;
+    }
 
-View.prototype.destroy = function() {
-  this._el.innerHTML = '';
-  this._unsubscribe();
-}
+    const state = this._store.getState();
 
-module.exports = View;
+    if (
+      typeof this.shouldComponentUpdate === 'function' &&
+      !this.shouldComponentUpdate(state)
+    ) {
+      return;
+    }
+
+    this._el.innerHTML = this.render(state);
+  }
+
+  render() {
+    throw new Error('Render should be overridden');
+  }
+
+  destroy() {
+    this._isDestroyed = true;
+    this._el.innerHTML = '';
+    this._unsubscribe();
+  }
+}

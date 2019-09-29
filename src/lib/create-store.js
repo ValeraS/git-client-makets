@@ -1,4 +1,4 @@
-function createStore(reducer, initialState, middleware) {
+export default function createStore(reducer, initialState, middleware) {
   if (typeof middleware === 'function') {
     return applyMiddleware(middleware);
   }
@@ -18,7 +18,7 @@ function createStore(reducer, initialState, middleware) {
     throw new Error('Reducer must be a function');
   }
 
-  const subscribers = [];
+  let subscribers = [];
   let state = initialState;
   let isDispatching = false;
 
@@ -42,7 +42,8 @@ function createStore(reducer, initialState, middleware) {
       isDispatching = false;
     }
 
-    subscribers.map(listener => listener());
+    let currentSubscribers = subscribers;
+    currentSubscribers.forEach(listener => listener());
   }
 
   function subscribe(listener) {
@@ -50,7 +51,7 @@ function createStore(reducer, initialState, middleware) {
       throw new Error('Listener must be a function');
     }
 
-    subscribers.push(listener);
+    subscribers = [...subscribers, listener];
 
     return function() {
       subscribers = subscribers.filter(l => l !== listener);
@@ -68,5 +69,3 @@ function createStore(reducer, initialState, middleware) {
   };
   return store;
 }
-
-module.exports =createStore;

@@ -6,6 +6,7 @@
     "tabs": ["Details", "History"],
     "activeTab": "History"
   },
+  "useFilter": false,
   "history": [
     {
       "title": "Today",

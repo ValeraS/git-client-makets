@@ -1,8 +1,13 @@
 .FileHeader {
   display: flex;
+  align-items: center;
 }
 
 .FileHeader-Filename {
   margin: 0;
   margin-right: var(--space-xxs);
+}
+
+.FileHeader-Search {
+  margin-left: 16px; 
 }

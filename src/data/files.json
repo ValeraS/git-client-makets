@@ -6,6 +6,7 @@
     "tabs": ["Files", "Branches"],
     "activeTab": "Files"
   },
+  "useFilter": true,
   "files": [
     {
       "type": "dir",

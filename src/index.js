@@ -1,18 +1,21 @@
-const { store, setFiles } = require('./lib/store');
-const FilterTable = require('./components/filter-table/filter-table');
-const FileList = require('./components/file-list/file-list');
+import { store } from './lib/store';
+import Filter from './components/filter/filter';
+import Table from './components/table/table';
+import Tabs from './components/tabs/tabs';
 
-const el = document.querySelector('.FilterTable');
-const filter = new FilterTable(el, store);
+if (window.location.pathname === '/files.html') {
+  const filterInput = document.querySelector('.FilterTable');
+  if (filterInput) {
+    new Filter(filterInput, store);
+  }
 
-const fileList = document.querySelector('.FileList');
-new FileList(fileList, store);
+  const tabsElement = document.querySelector('.Tabs');
+  if (tabsElement) {
+    new Tabs(tabsElement, store, ['Files', 'Branches']);
+  }
 
-function fetchFiles() {
-  const filesMock = require('./data/files.json').files;
-  return new Promise(resolve => setTimeout(() => resolve(filesMock), 2000));
+  const tableElement = document.querySelector('.Table');
+  if (tableElement) {
+    new Table(tableElement, store);
+  }
 }
-
-store.dispatch(dispatch =>
-  fetchFiles().then(files => dispatch(setFiles(files)))
-);

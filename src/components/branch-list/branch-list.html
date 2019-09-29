@@ -1,4 +1,4 @@
-<table class="Table Typo Typo_size_s">
+<table class="BranchList Table Typo Typo_size_s">
   <thead class="Divider">
     <tr class="Table-Head">
       <td class="Table-Col">
@@ -11,8 +11,8 @@
   </thead>
   <tbody>
     <each loop="branch in branches">
-      <tr class="Table-Line Divider">
-        <scope with="branch">
+      <scope with="branch">
+        <tr class="Table-Line Divider">
           <td class="Table-Col">
             <span class="FileTypeIcon FileTypeIcon_type_branch">
               {{ name }}
@@ -23,8 +23,8 @@
               src="src/components/commit-hash/commit-hash.html"
             ></include>
           </td>
-        </scope>
-      </tr>
+        </tr>
+      </scope>
     </each>
   </tbody>
 </table>
