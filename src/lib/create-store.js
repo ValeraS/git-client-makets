@@ -1,16 +1,19 @@
 export default function createStore(reducer, initialState, middleware) {
-  if (typeof middleware === 'function') {
+  if (Array.isArray(middleware)) {
     return applyMiddleware(middleware);
   }
 
   function applyMiddleware(middleware) {
     const store = createStore(reducer, initialState);
-    const dispatchWithMiddleware = middleware({
+    const middlewareApi = {
       getState: store.getState,
-      dispatch: store.dispatch,
-    });
+      dispatch: (...args) => dispatch(...args),
+    };
+    const dispatch = middleware
+      .map(m => m(middlewareApi))
+      .reduce((a, b) => (...args) => a(b(...args)), a => a)(store.dispatch);
     return Object.assign({}, store, {
-      dispatch: dispatchWithMiddleware,
+      dispatch,
     });
   }
 

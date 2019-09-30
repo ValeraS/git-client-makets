@@ -63,7 +63,7 @@ function reducer(state, action) {
   }
 }
 
-export const store = createStore(reducer, initState, middleware);
+export const store = createStore(reducer, initState, [middleware]);
 
 export function setFilter(value) {
   return {

@@ -136,18 +136,31 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function createStore(reducer, initialState, middleware) {
-  if (typeof middleware === 'function') {
+  if (Array.isArray(middleware)) {
     return applyMiddleware(middleware);
   }
 
   function applyMiddleware(middleware) {
     var store = createStore(reducer, initialState);
-    var dispatchWithMiddleware = middleware({
+    var middlewareApi = {
       getState: store.getState,
-      dispatch: store.dispatch
-    });
+      dispatch: function dispatch() {
+        return _dispatch.apply(void 0, arguments);
+      }
+    };
+
+    var _dispatch = middleware.map(function (m) {
+      return m(middlewareApi);
+    }).reduce(function (a, b) {
+      return function () {
+        return a(b.apply(void 0, arguments));
+      };
+    }, function (a) {
+      return a;
+    })(store.dispatch);
+
     return Object.assign({}, store, {
-      dispatch: dispatchWithMiddleware
+      dispatch: _dispatch
     });
   }
 
@@ -215,19 +228,23 @@ function createStore(reducer, initialState, middleware) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = middleware;
+exports.default = void 0;
 
-function middleware(_ref) {
-  var getState = _ref.getState,
-      dispatch = _ref.dispatch;
-  return function (action) {
-    if (typeof action === 'function') {
-      return action(dispatch, getState);
-    }
+var _default = function _default(_ref) {
+  var dispatch = _ref.dispatch,
+      getState = _ref.getState;
+  return function (next) {
+    return function (action) {
+      if (typeof action === 'function') {
+        return action(dispatch, getState);
+      }
 
-    return dispatch(action);
+      return next(action);
+    };
   };
-}
+};
+
+exports.default = _default;
 },{}],"data/files.json":[function(require,module,exports) {
 module.exports = {
   "path": [],
@@ -413,7 +430,7 @@ function reducer(state, action) {
   }
 }
 
-var store = (0, _createStore.default)(reducer, initState, _middleware.default);
+var store = (0, _createStore.default)(reducer, initState, [_middleware.default]);
 exports.store = store;
 
 function setFilter(value) {
